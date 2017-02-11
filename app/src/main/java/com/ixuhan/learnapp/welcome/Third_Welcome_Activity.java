@@ -1,5 +1,6 @@
 package com.ixuhan.learnapp.welcome;
 
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -8,12 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.ixuhan.learnapp.R;
+import com.ixuhan.learnapp.body.Main_Body_Activity;
 
 import java.io.IOException;
 
@@ -64,8 +67,6 @@ public class Third_Welcome_Activity extends AppCompatActivity {
     protected void findViewById() {
         // TODO Auto-generated method stub
         surfaceview = (SurfaceView) findViewById(R.id.surfaceView);
-        btnGo = (Button) findViewById(R.id.btn_goto);
-
     }
 
     protected void initView() {
@@ -128,6 +129,14 @@ public class Third_Welcome_Activity extends AppCompatActivity {
                 mediaPlayer.start();
             }
         });
+    }
+
+    //第三种方式(Android1.6版本及以后的版本中提供了)
+    public void IntoMain(View view){
+        Intent intent = new Intent();
+        intent.setClass(Third_Welcome_Activity.this, Main_Body_Activity.class);
+        startActivity(intent);
+        Third_Welcome_Activity.this.finish();//结束当前的activity
     }
 
 }

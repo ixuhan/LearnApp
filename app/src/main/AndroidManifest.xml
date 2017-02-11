@@ -24,5 +24,6 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".body.Main_Body_Activity"/>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
